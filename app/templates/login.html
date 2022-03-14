@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+{% block login %}
+<div class="card card-body">
+	<h4 align="center">Client Access Login</h4>
+	<form action="" method="POST">
+		<input type="email" name="email" class="form-control" placeholder="Email....." required  style="margin-top:3px;"/>
+		<input type="password" name="password" class="form-control" placeholder="Password....." required style="margin-top:3px;" />
+		<input type="text" name="token" class="form-control" placeholder="OTP....." required style="margin-top:3px;" />
+		<center>
+			<input type="submit" class="btn btn-success" style="border-radius:20px; margin-top:3px;" />
+		</center>
+	</form>
+</div>	
+{% endblock %}

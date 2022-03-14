@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block admin %}
+{# navbar start #}
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{{ url_for('admin') }}">Enhanced Hybrid Model Data Security (Admin)</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{ url_for('index') }}">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Register
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{{ url_for('register') }}">Create Account</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('viewRec') }}">Client Records</a></li>
+          </ul>
+        </li>
+		<li class="nav-item">
+          <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="#"></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+{# navbar end #}
+<br><br><br>
+{# body start #}
+<div class="container">
+	<div class="row">
+		{% for message in get_flashed_messages() %}
+			<p>{{ message }}</p>
+		{% endfor %}
+	</div>
+	<div class="row">
+		<div class="col-md-2">
+		</div>
+		<div class="col-md-8">
+			{% block register %}{% endblock %}
+			{% block viewRec %}{% endblock %}
+		</div>
+		<div class="col-md-2">
+		</div>
+	</div>
+</div>
+{# body end #}
+{% endblock %}

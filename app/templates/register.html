@@ -1,0 +1,15 @@
+{% extends 'admin.html' %}
+{% block register %}
+<div class="card card-body">
+	<h4 align="center">Add New Client User</h4>
+	<form action="{{url_for('register') }}" method="POST">
+		<input type="text" name="username" class="form-control" placeholder="User name....." required style="margin-top:3px;"/>
+		<input type="email" name="email" class="form-control" placeholder="Email....." required style="margin-top:3px;"/>
+		<input type="password" name="password" class="form-control" placeholder="Password....." required style="margin-top:3px;"/>
+		<input type="text" name="job" class="form-control" placeholder="Job....." required style="margin-top:3px;"/>
+		<center>
+			<input type="submit" value="Register" class="btn btn-success" style="border-radius:20px; margin-top:3px;" />
+		</center>
+	</form>
+</div>
+{% endblock %}
